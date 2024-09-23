@@ -32,7 +32,7 @@ test('Возвращает корректное значение для гран
   expect(convertBytesToHuman(1023)).toBe("1023 B")
   expect(convertBytesToHuman(1024)).toBe("1 KB")
   expect(convertBytesToHuman(1025)).toBe("1 KB")
-  expect(convertBytesToHuman(1024 * 1023)).toBe("1023 KB");
+  expect(convertBytesToHuman(1024 * 1023)).toBe("1023 KB")
   expect(convertBytesToHuman(1024 * 1024)).toBe("1 MB")
   expect(convertBytesToHuman(1024 * 1025)).toBe("1 MB")  
 });
