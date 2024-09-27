@@ -28,20 +28,18 @@ export default function nonUniqueElements(data) {
   const encounteredElements = new Map();
   const result = [];
 
-  //filling in a Map of all encountered elements and their number
-  data.forEach(element => {
+  data.forEach((element) => {
     if (!encounteredElements.has(element)) {
       encounteredElements.set(element, 0);
     }
     encounteredElements.set(element, encounteredElements.get(element) + 1);
   });
 
-  //filling in result with all non-unique elements
-  data.forEach(element => {
-    if(encounteredElements.get(element) > 1){
+  data.forEach((element) => {
+    if (encounteredElements.get(element) > 1) {
       result.push(element);
     }
   });
 
-  return result
+  return result;
 }

@@ -18,18 +18,13 @@ correctSentence("Greetings, friends.") == "Greetings, friends."
  */
 
 export default function correctSentence(text) {
-  //Getting rid of possible whitespaces
   text = text.trim();
 
-  //Capitalizing the first letter
-  if (text.length > 0) {
-    text = text[0].toUpperCase() + text.slice(1);
+  if (text.length === 0) {
+    return text;
   }
 
-  //Adding a period if needed
-  if (text[text.length - 1] !== '.') {
-    text += '.';
-  }
+  text = `${text.trim()[0].toUpperCase()}${text.trim().slice(1)}`;
 
-  return text;
+  return text.endsWith(".") ? text : `${text}.`;
 }

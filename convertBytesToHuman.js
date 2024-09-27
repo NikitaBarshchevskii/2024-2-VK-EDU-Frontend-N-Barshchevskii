@@ -18,20 +18,18 @@
  */
 
 export default function convertBytesToHuman(bytes) {
-  if (typeof bytes !== 'number' || isNaN(bytes) || bytes < 0) {
+  if (typeof bytes !== "number" || isNaN(bytes) || bytes < 0) {
     return false;
   }
 
+  const units = ["B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
   let counter = 0;
-  const units = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 
-  //Converting bytes with each iteration
   while (bytes >= 1024 && counter < units.length - 1) {
     bytes /= 1024;
     counter++;
   }
-  
+
   bytes = parseFloat(bytes.toFixed(2));
-  const str = bytes + " " + units[counter];
-  return str;
+  return `${bytes} ${units[counter]}`;
 }
